@@ -18,8 +18,7 @@ public class CurrencyExchangeController {
     public CurrencyExchange retrieveExchangeValue(
         @PathVariable String from,
         @PathVariable String to) {
-//        CurrencyExchange currencyExchange = new CurrencyExchange(1000L, from, to,
-//            BigDecimal.valueOf(50));
+
         CurrencyExchange currencyExchange = repository.findByFromAndTo(from, to);
 
         if (currencyExchange == null) {
