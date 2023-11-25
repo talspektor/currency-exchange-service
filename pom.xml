@@ -34,14 +34,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
+		<!-- CHANGE-KUBERNETES -->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.cloud</groupId>-->
+<!--			<artifactId>spring-cloud-starter-config</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.cloud</groupId>-->
+<!--			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -71,14 +72,16 @@
             > Brave (Tracer library)
             > Zipkin
 -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-sleuth</artifactId>
-		</dependency>
+		<!-- CHANGE-KUBERNETES -->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.cloud</groupId>-->
+<!--			<artifactId>spring-cloud-starter-sleuth</artifactId>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-sleuth-brave</artifactId>
 		</dependency>
+		<!-- CHANGE-KUBERNETES -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
@@ -105,7 +108,6 @@
 					<image>
 						<builder>paketobuildpacks/builder-jammy-base:latest</builder>
 					</image>
-					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
 				</configuration>
 			</plugin>
 		</plugins>
