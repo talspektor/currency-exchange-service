@@ -1,7 +1,7 @@
 package com.tspektor.microservices.currencyexchangeservice;
 
-import java.math.BigDecimal;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
+@Slf4j
 public class CurrencyExchangeController {
 
     private final Environment environment;
@@ -18,6 +19,8 @@ public class CurrencyExchangeController {
     public CurrencyExchange retrieveExchangeValue(
         @PathVariable String from,
         @PathVariable String to) {
+
+        log.info("retrieveExchangeValue called with {} to {}", from, to);
 
         CurrencyExchange currencyExchange = repository.findByFromAndTo(from, to);
 
