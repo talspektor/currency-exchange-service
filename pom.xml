@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.tspektor.microservices</groupId>
 	<artifactId>currency-exchange-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.11-SNAPSHOT</version>
 	<name>currency-exchange-service</name>
 	<description>Currency Exchange</description>
 	<properties>

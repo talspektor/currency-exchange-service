@@ -22,14 +22,21 @@ public class CurrencyExchangeController {
 
         log.info("retrieveExchangeValue called with {} to {}", from, to);
 
-        CurrencyExchange currencyExchange = repository.findByFromAndTo(from, to);
+        CurrencyExchange currencyExchange
+            = repository.findByFromAndTo(from, to);
 
-        if (currencyExchange == null) {
-            throw new RuntimeException("Unable to find data for " + from + " to " + to);
+        if(currencyExchange ==null) {
+            throw new RuntimeException
+                ("Unable to Find data for " + from + " to " + to);
         }
 
         String port = environment.getProperty("local.server.port");
-        currencyExchange.setEnvironment(port);
+
+        //CHANGE-KUBERNETES
+        String host = environment.getProperty("HOSTNAME");
+        String version = "v11";
+
+        currencyExchange.setEnvironment(port + " " + version + " " + host);
 
         return currencyExchange;
     }
